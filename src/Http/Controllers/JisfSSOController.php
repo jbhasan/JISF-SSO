@@ -2,9 +2,11 @@
 
 namespace Sayeed\JisfSSO\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class JisfSSOController
+class JisfSSOController extends Controller
 {
 	public function showLoginForm()
 	{
@@ -12,11 +14,19 @@ class JisfSSOController
 	}
 	public function loginResponse(Request $request) {
 		$data = json_decode(base64_decode($request->data), true);
-		if ($data['status'] == 'success') {
+		if ($data['status'] == 'success' && !empty($data['user_info'])) {
 			session(['login' => ['status' => 'logged_in', 'user' => $data['user_info']]]);
 			return redirect('/');
 		} else {
 			return redirect('/login');
 		}
+	}
+
+	public function logout(Request $request) {
+		$request->session()->invalidate();
+		$request->session()->regenerateToken();
+		session(['login' => ['status' => 'logged_out', 'user' => []]]);
+
+		return redirect(config('jisf.logout_sso_url') . '?referer=' . base64_encode(url('/login-response')));
 	}
 }

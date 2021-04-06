@@ -4,7 +4,6 @@ namespace Sayeed\JisfSSO\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class JisfAuthenticate
 {
