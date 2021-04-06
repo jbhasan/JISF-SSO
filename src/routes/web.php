@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/login', 'Sayeed\JisfSSO\Http\Controllers\JisfSSOController@showLoginForm')->name('login');
-Route::get('/login-response', 'Sayeed\JisfSSO\Http\Controllers\JisfSSOController@loginResponse');
-Route::get('/testing', 'Sayeed\JisfSSO\Http\Controllers\JisfSSOController@loginResponse')->name('testing');
+Route::get('/login/{login?}', 'Sayeed\JisfSSO\Http\Controllers\JisfSSOController@showLoginForm')->name('login');
+Route::get('/login-response', 'Sayeed\JisfSSO\Http\Controllers\JisfSSOController@loginResponse')->name('login-response');
