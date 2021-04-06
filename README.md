@@ -1,3 +1,5 @@
+<p align="center"><a href="http://jisf-dashboard.e-judiciary.org" target="_blank"><img src="http://jisf-dashboard.e-judiciary.org/assets/media/logos/jisf-logo-1.png" width="200"></a></p>
+
 # JISF SSO
 Single Sign On for JISF
 
