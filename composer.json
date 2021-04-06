@@ -1,0 +1,31 @@
+{
+    "name": "sayeed/jisf-single-sign-on",
+    "description": "Single sing on application for JISF",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Md. Hasan Sayeed",
+            "email": "jbhasan@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "laravel/framework":"^7.0",
+        "laravelcollective/html":"^6.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sayeed\\JisfSSO\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sayeed\\JisfSSO\\JisfSSOServiceProvider"
+            ]
+        }
+    }
+}
