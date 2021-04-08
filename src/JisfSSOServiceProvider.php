@@ -19,7 +19,7 @@ class JisfSSOServiceProvider extends ServiceProvider
 
 
 		$router = $this->app->make(Router::class);
-		$router->aliasMiddleware('sso.auth', JisfAuthenticate::class);
+		$router->aliasMiddleware('jisf.auth', JisfAuthenticate::class);
     }
 
     /**

@@ -22,11 +22,19 @@ The package will automatically register itself, so you can start using it immedi
 #### Update`web.php` in `routes` directory
 - Remove `Auth::routes();`, if exists.
 
+#### Use `jisf.auth` for JISF SSO authentication
+```
+Route::middleware(['jisf.auth'])->group(function () {
+    /// here your authentication route
+});
+```
+
 
 
 ## Credits
 
 - [Md. Hasan Sayeed](https://github.com/jbhasan)
+- [Tappware Solutions Limited](https://tappware.com)
 
 For any questions, you can reach out to the author of this package, Md. Hasan Sayeed.
 
