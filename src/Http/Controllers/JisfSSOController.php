@@ -4,7 +4,6 @@ namespace Sayeed\JisfSSO\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class JisfSSOController extends Controller
 {
@@ -15,7 +14,9 @@ class JisfSSOController extends Controller
 	public function loginResponse(Request $request) {
 		$data = json_decode(base64_decode($request->data), true);
 		if ($data['status'] == 'success' && !empty($data['user_info'])) {
-			session(['login' => ['status' => 'logged_in', 'user' => $data['user_info']]]);
+			session()->put(['login' => ['status' => 'logged_in', 'user' => $data['user_info']]]);
+			session()->save();
+
 			return redirect('/');
 		} else {
 			return redirect('/login');
