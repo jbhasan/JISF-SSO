@@ -2,6 +2,7 @@
 
 namespace Sayeed\JisfSSO;
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Sayeed\JisfSSO\Http\Middleware\JisfAuthenticate;

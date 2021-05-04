@@ -16,10 +16,11 @@ class JisfAuthenticate
      */
     public function handle(Request $request, Closure $next)
     {
-		$login_session = session('login');
+		$login_session = $request->session()->get('login');
 		$login_session = $login_session ? $login_session : null;
 		if (!$login_session || $login_session['status'] !== 'logged_in') {
-			return redirect()->route('login');
+			$redirect_url = url()->previous();
+			return redirect()->route('login', ['redirect' => $redirect_url]);
 		}
 
         return $next($request);

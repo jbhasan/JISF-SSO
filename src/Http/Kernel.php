@@ -14,6 +14,6 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-		'sso.auth' => \App\Http\Middleware\JisfAuthenticate::class,
+		'jisf.auth' => \App\Http\Middleware\JisfAuthenticate::class,
     ];
 }
