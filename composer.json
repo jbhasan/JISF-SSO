@@ -1,6 +1,6 @@
 {
     "name": "sayeed/jisf-single-sign-on",
-    "description": "Single sing on application for JISF",
+    "description": "SSO for N-DOPTOR",
     "type": "library",
     "license": "MIT",
     "authors": [

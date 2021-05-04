@@ -1,7 +1,7 @@
-<p align="center"><a href="http://jisf-dashboard.e-judiciary.org" target="_blank"><img src="http://jisf-dashboard.e-judiciary.org/assets/media/logos/jisf-logo-1.png" width="200"></a></p>
+<p align="center"><a href="http://jisf-dashboard.e-judiciary.org" target="_blank"><img src="https://n-doptor-accounts-stage.nothi.gov.bd/img/doptor.png" width="200"></a></p>
 
-# JISF SSO
-Single Sign On for JISF
+# N-DOPTOR SSO
+Single Sign On for N-DOPTOR
 
 ## Installation
 You can install the package via composer:
@@ -22,7 +22,7 @@ The package will automatically register itself, so you can start using it immedi
 #### Update`web.php` in `routes` directory
 - Remove `Auth::routes();`, if exists.
 
-#### Use `jisf.auth` for JISF SSO authentication
+#### Use `jisf.auth` for N-DOPTOR SSO authentication
 ```
 Route::middleware(['jisf.auth'])->group(function () {
     /// here your authentication route
