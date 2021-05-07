@@ -20,8 +20,8 @@ class JisfSSOController extends Controller
 		$data = json_decode(base64_decode($request->data), true);
 
 		if ($data['status'] == 'success' && !empty($data['user_info'])) {
-			$request->session()->put(['login' => ['status' => 'logged_in', 'user' => $data['user_info']]]);
-			$request->session()->save();
+
+			setcookie('_ndoptor', $request->data, strtotime( '+1 days' ), '/');
 			if ($request->has('redirect') && $request->get('redirect') != '') {
 				return redirect($request->get('redirect'));
 			} else {
@@ -35,8 +35,8 @@ class JisfSSOController extends Controller
 	public function logout(Request $request) {
 		$request->session()->invalidate();
 		$request->session()->regenerateToken();
-		$request->session()->put(['login' => ['status' => 'logged_out', 'user' => []]]);
-		$request->session()->save();
+		unset($_COOKIE['_ndoptor']);
+		setcookie('_ndoptor', null, strtotime( '-1 days' ), '/');
 
 		return redirect(config('jisf.logout_sso_url') . '?referer=' . base64_encode(url('/login-response')));
 	}
